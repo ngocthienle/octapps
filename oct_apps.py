@@ -27,7 +27,7 @@ st.set_page_config(page_title = 'OCT Diseases Detection', page_icon=logo_image)
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    model = tf.keras.models.load_model("D:\OneDrive\streamlitprojects\octapps\\oct3\OCT3_EyeDiseases_Classification_MobileNetV2.hdf5")
+    model = tf.keras.models.load_model("\oct3\OCT3_EyeDiseases_Classification_MobileNetV2.hdf5")
     return model
 
 with st.spinner('Loading Model Into Memory...'):
