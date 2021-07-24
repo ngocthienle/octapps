@@ -22,8 +22,8 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_input as mobilenet_v2_preprocess_input
 
 # NAME OF PAGE
-logo_image = Image.open('D:\OneDrive\streamlitprojects\octapps/logo.png')
-st.set_page_config(page_title = 'StrokeApps', page_icon=logo_image)
+logo_image = Image.open('logo.png')
+st.set_page_config(page_title = 'OCT Diseases Detection', page_icon=logo_image)
 
 @st.cache(allow_output_mutation=True)
 def load_model():
@@ -34,7 +34,7 @@ with st.spinner('Loading Model Into Memory...'):
     model = load_model()
 
 # Create web-app title
-st.title("""Eyes diseases detection Web Application Chulalongkorn University""")
+st.title("""OCT Eyes diseases detection Web Application Chulalongkorn University""")
 
 # Create header explaination
 st.write("""
@@ -47,7 +47,7 @@ st.write("""
     """)
     
 st.subheader('Example input OCT eye images')
-image = Image.open('D:\OneDrive\streamlitprojects\octapps\example_pics.jpg')
+image = Image.open('example_pics.jpg')
 st.image(image, caption='Example of input OCT images.')
 
 st.subheader('Choose a OCT image and get the output prediction')
