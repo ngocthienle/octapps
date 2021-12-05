@@ -16,7 +16,7 @@ from tensorflow.keras.applications.inception_v3 import preprocess_input as v3_pr
 @st.cache(allow_output_mutation=True)
 def load_model():
     model = tf.keras.models.load_model(
-        "D:\OneDrive\streamlitprojects\eyes_web_apps\\aimodels\OCT4_EyeDiseases_Classification_InceptionV3_22Nov2021.hdf5"
+        "aimodels/OCT4_EyeDiseases_Classification_InceptionV3_22Nov2021.hdf5"
     )
 
     return model
@@ -27,7 +27,7 @@ with  st.spinner('Loading Model Into Memory...'):
 
 
 def app():
-    image = Image.open('D:\OneDrive\streamlitprojects\eyes_web_apps/eye_logo.png')
+    image = Image.open('eye_logo.png')
     st.image(image)
     st.title("""OCT AMD and DME Grading""")
     # Create header explaination
@@ -37,7 +37,7 @@ def app():
                  This web-apps grades a OCT image as Normal, Drusen, DME, or CNV using backend AI engine.
                  The trained AI engine is based on the InceptionNetV3 deep learning model.
                      """)
-        image = Image.open('D:\OneDrive\streamlitprojects\eyes_web_apps\example_oct.png')
+        image = Image.open('example_oct.png')
         st.image(image,
                  caption='Example AMD and DME grading.')
 
