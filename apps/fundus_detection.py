@@ -15,7 +15,7 @@ from tensorflow.keras.applications.inception_v3 import preprocess_input as v3_pr
 @st.cache(allow_output_mutation=True)
 def load_model():
     model = tf.keras.models.load_model(
-        "D:\OneDrive\streamlitprojects\eyes_web_apps\\aimodels\classification_AMD_Classification_InceptionV3.hdf5"
+        "aimodels/classification_AMD_Classification_InceptionV3.hdf5"
     )
 
     return model
@@ -26,7 +26,7 @@ with  st.spinner('Loading Model Into Memory...'):
 
 
 def app():
-    image = Image.open('D:\OneDrive\streamlitprojects\eyes_web_apps/eye_logo.png')
+    image = Image.open('eye_logo.png')
     st.image(image)
     st.title("""Fundus AMD Classification""")
     # Create header explaination
@@ -36,7 +36,7 @@ def app():
                  This web-apps examines a fundus image as Normal, Wet AMD, or Dry AMD using backend AI engine.
                  The trained AI engine is based on the InceptionV3 deep learning model.
                      """)
-        image = Image.open('D:\OneDrive\streamlitprojects\eyes_web_apps\example_fundus.png')
+        image = Image.open('example_fundus.png')
         st.image(image,
                  caption='Example AMD classification.')
 
