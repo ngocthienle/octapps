@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 
 def app():
-    image = Image.open('D:\OneDrive\streamlitprojects\eyes_web_apps/eye_logo.png')
+    image = Image.open('eye_logo.png')
     st.image(image)
     st.title("""Patient Record""")
     
