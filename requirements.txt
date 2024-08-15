@@ -3,3 +3,4 @@ pandas
 opencv-python-headless
 streamlit
 tensorflow
+protobuf==3.20.1
